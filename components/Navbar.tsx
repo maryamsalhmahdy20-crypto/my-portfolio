@@ -27,7 +27,7 @@ export default function Navbar() {
   // جميع روابط الموقع موجودة هنا
   const links = [
     { title: "Home", href: "/" },
-    { title: "Projects", href: "/projects" },
+    { title: "Portfolio", href: "/portfolio" },
     { title: "Gallery", href: "/gallery" },
     { title: "Pricing", href: "/pricing" },
     { title: "Contact", href: "/contact" },

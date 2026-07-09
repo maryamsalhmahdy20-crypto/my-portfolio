@@ -3,118 +3,127 @@
 /* ============================================================
    Hero.tsx
 
-   هذا الملف مسؤول عن أول واجهة يراها الزائر.
+   واجهة الصفحة الرئيسية.
 
-   تستطيع مستقبلاً تغيير:
+   لتغيير الاسم:
+   عدّل النص داخل h1.
 
-   1- الاسم
-   2- المسمى الوظيفي
-   3- الوصف
-   4- الصورة
-   5- الألوان
+   لتغيير المسمى:
+   عدّل النص داخل h2.
 
-   الصورة المستخدمة:
+   لتغيير الوصف:
+   عدّل الفقرة.
 
+   لتغيير الصورة:
+   استبدل الملف:
    public/images/profile.jpg
 
 ============================================================ */
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-slate-950 text-white flex items-center">
+    <section className="relative min-h-screen pt-20 bg-slate-950 text-white flex items-center overflow-hidden">
 
-      {/* حاوية المحتوى */}
+      {/* =============================
+          الخلفية المضيئة
+      ============================== */}
+
+      <div className="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-blue-600/20 blur-[120px]" />
+
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[150px]" />
+
+      {/* =============================
+          المحتوى
+      ============================== */}
+
       <div className="max-w-7xl mx-auto px-8 w-full">
 
-        {/* نقسم الصفحة إلى عمودين */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* =======================
-              الجهة اليسرى
-          ======================== */}
+          {/* =============================
+              النص
+          ============================== */}
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
 
-            {/* النص الصغير */}
             <p className="text-blue-400 font-semibold tracking-widest uppercase">
-
-              Welcome to my portfolio
-
+              Welcome to my Portfolio
             </p>
 
-            {/* الاسم */}
-
-            <h1 className="text-6xl font-black mt-4 leading-tight">
-
+            <h1 className="text-6xl lg:text-7xl font-black mt-4 leading-tight">
               Maryam
               <br />
               Saleh
-
             </h1>
 
-            {/* التخصص */}
-
-            <h2 className="text-2xl mt-6 text-slate-300">
-
-              CSIT Student • Frontend Developer
-
+            <h2 className="text-2xl mt-6 text-slate-300 leading-relaxed">
+              Graphic Designer
+              <br />
+              Brand Identity Specialist
             </h2>
 
-            {/* الوصف */}
-
             <p className="mt-8 text-slate-400 leading-8 max-w-xl">
-
-              Passionate about building modern web applications using
-              Next.js, React and TypeScript.
-              I enjoy designing clean interfaces and creating
-              responsive user experiences.
-
+              Helping brands grow through creative visual identities,
+              print design, social media content and modern marketing
+              materials.
             </p>
-
-            {/* الأزرار */}
 
             <div className="flex gap-5 mt-10">
 
-              {/* المشاريع */}
-
               <Link
                 href="/projects"
-                className="bg-blue-600 hover:bg-blue-700 duration-300 px-7 py-4 rounded-xl font-semibold"
+                className="bg-blue-600 hover:bg-blue-700 px-7 py-4 rounded-xl font-semibold duration-300"
               >
-                View Projects
+                View Portfolio
               </Link>
-
-              {/* التواصل */}
 
               <Link
                 href="/contact"
-                className="border border-blue-500 hover:bg-blue-500 duration-300 px-7 py-4 rounded-xl font-semibold"
+                className="border border-blue-500 hover:bg-blue-600 px-7 py-4 rounded-xl font-semibold duration-300"
               >
                 Contact Me
               </Link>
 
             </div>
 
-          </div>
+          </motion.div>
 
-          {/* =======================
-                الصورة
-          ======================== */}
+          {/* =============================
+              الصورة
+          ============================== */}
 
-          <div className="flex justify-center">
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
 
             <Image
               src="/images/profile.jpg"
               alt="Maryam"
               width={420}
               height={420}
-              className="rounded-full border-8 border-blue-500 shadow-2xl"
+              priority
+              className="
+                rounded-full
+                border-[10px]
+                border-blue-500
+                shadow-[0_0_70px_rgba(37,99,235,.45)]
+                hover:scale-105
+                duration-500
+              "
             />
 
-          </div>
+          </motion.div>
 
         </div>
 
