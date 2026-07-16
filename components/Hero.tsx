@@ -88,7 +88,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="/contact"
+              href="/contact"
                 className="rounded-xl border border-blue-500 hover:bg-blue-600 duration-300 px-8 py-4 font-semibold"
               >
 
