@@ -1,15 +1,7 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Testimonials from "@/components/Testimonials";
-
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <About />
-      <Projects />
-      <Testimonials />
-    </>
+    <h1 style={{color:"white",padding:"40px"}}>
+      TEST
+    </h1>
   );
 }
