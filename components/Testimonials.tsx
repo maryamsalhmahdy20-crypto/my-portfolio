@@ -18,6 +18,8 @@ export default function Testimonials() {
   const [comment, setComment] = useState("");
 
   async function loadComments() {
+    if (!supabase) return;
+    
     const { data } = await supabase
       .from("comments")
       .select("*")
@@ -34,6 +36,11 @@ export default function Testimonials() {
   async function sendComment() {
     if (!name || !email || !comment) {
       alert("Please fill all fields");
+      return;
+    }
+
+    if (!supabase) {
+      alert("Database connection not available");
       return;
     }
 
