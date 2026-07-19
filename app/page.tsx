@@ -1,7 +1,15 @@
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+
 export default function Home() {
   return (
-    <div style={{ color: "white", fontSize: "50px", padding: "100px" }}>
-      TEST PAGE
-    </div>
+    <>
+      <Hero />
+      <About />
+      <Projects />
+      <Testimonials />
+    </>
   );
 }
