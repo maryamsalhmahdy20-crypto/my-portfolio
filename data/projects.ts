@@ -22,7 +22,7 @@ description:"Creative Instagram and Facebook campaigns.",
 images:[
 "/images/portfolio/social.jpg",
 "/images/portfolio/social2.jpg",
-"/images/portfolio/social3.png",
+"/images/portfolio/social3.jpg",
 ],
 },
 
@@ -33,7 +33,6 @@ category:"Print",
 cover:"/images/portfolio/print.jpg",
 description:"Brochure, Flyer and Business Card.",
 images:[
-"/images/portfolio/print.jpg",
 "/images/portfolio/print2.jpg",
 "/images/portfolio/print3.jpg",
 ],

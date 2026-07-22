@@ -16,7 +16,7 @@ const galleryItems = [
     src: "/images/portfolio/brand2.jpg",
     title: "College Identity Concept",
     description:
-      "تحدي تصميم هوية بصرية لكلية علوم الحاسوب وتكنولوجيا المعلومات ضمن مشروع تخرج.",
+      "تحدي تصميم هوية بصرية لكلية علوم الحاسوب وتكنولوجيا المعلومات.",
     alt: "College Identity Concept - هوية بصرية لكلية علوم الحاسوب",
   },
   {
