@@ -94,6 +94,125 @@ const addons = [
   { nameEn: "Website UI Design (per page)", nameAr: "تصميم واجهة موقع (للصفحة)", price: "$100" },
 ];
 
+// ─── Individual Services ─────────────────────────────────────────
+const individualServices = [
+  { nameEn: "Logo Design", nameAr: "تصميم شعار", price: "$100" },
+  { nameEn: "Bag Design", nameAr: "تصميم حقيبة", price: "$25" },
+  { nameEn: "Business Card Design", nameAr: "تصميم بطاقة عمل", price: "$15" },
+  { nameEn: "Thank You Card Design", nameAr: "تصميم كارت شكر", price: "$15" },
+  { nameEn: "Box Design", nameAr: "تصميم صندوق", price: "$30" },
+  { nameEn: "Brochure Design", nameAr: "تصميم بروشور", price: "$40" },
+  { nameEn: "Envelope Design", nameAr: "تصميم ظرف", price: "$10" },
+  { nameEn: "Access Design", nameAr: "تصميم أكسس", price: "$10" },
+  { nameEn: "Wrapping Paper Design", nameAr: "تصميم ورق تغليف", price: "$5" },
+  { nameEn: "Social Media Post Template", nameAr: "تصميم منشور سوشيال ميديا", price: "$5" },
+  { nameEn: "Story Publishing Template", nameAr: "تصميم قصة ستوري", price: "$5" },
+  { nameEn: "Highlight Design", nameAr: "تصميم هايلايت", price: "$2" },
+  { nameEn: "Sticker Design", nameAr: "تصميم استيكر", price: "$2" },
+];
+
+// ─── Design Packages ──────────────────────────────────────────────
+const designPackages = [
+  {
+    nameEn: "Professional Identity",
+    nameAr: "هوية احترافية",
+    price: "$299",
+    descriptionEn: "Ideal for professional companies looking to develop and enhance their brand.",
+    descriptionAr: "مثالية للشركات المحترفة التي تتطلع لتطوير علامتها التجارية.",
+    featuresEn: [
+      "Complete Visual Identity Design",
+      "All types of packaging (bags, boxes, cups, flags, etc.)",
+      "Marketing Material Design (banner, brochure, invitation cards, etc.)",
+      "Social Media Templates",
+      "Story Post Templates",
+      "Highlights",
+    ],
+    featuresAr: [
+      "تصميم هوية بصرية كاملة",
+      "جميع أنواع التغليف (أكياس، صناديق، أكواب، أعلام، إلخ)",
+      "تصميم مواد تسويقية (بانر، بروشور، بطاقات دعوة، إلخ)",
+      "قوالب سوشيال ميديا",
+      "قوالب قصص ستوري",
+      "هايلايتس",
+    ],
+  },
+  {
+    nameEn: "Complete Identity",
+    nameAr: "هوية كاملة",
+    price: "$150",
+    descriptionEn: "Ideal for medium-sized businesses that need to enhance their visual identity.",
+    descriptionAr: "مثالية للشركات المتوسطة التي تحتاج تعزيز هويتها البصرية.",
+    featuresEn: [
+      "Logo Design",
+      "Business Card Design",
+      "Thank You Card Design",
+      "Bag Design",
+      "Box Design",
+      "Receipt Design",
+      "Social Media Post Template",
+      "3 Story Post Templates",
+      "5 Highlights",
+    ],
+    featuresAr: [
+      "تصميم شعار",
+      "تصميم بطاقة عمل",
+      "تصميم كارت شكر",
+      "تصميم حقيبة",
+      "تصميم صندوق",
+      "تصميم إيصال",
+      "قالب منشور سوشيال ميديا",
+      "3 قوالب ستوري",
+      "5 هايلايتس",
+    ],
+  },
+  {
+    nameEn: "The Perfect Start",
+    nameAr: "البداية المثالية",
+    price: "$100",
+    descriptionEn: "Ideal for those starting their business and needing a strong visual identity.",
+    descriptionAr: "مثالية لمن يبدأون مشوارهم التجاري ويحتاجون هوية بصرية قوية.",
+    featuresEn: [
+      "Logo Design",
+      "Business Card Design",
+      "Sticker Design",
+      "Social Media Post Template",
+      "Story Post Template",
+      "3 Highlights",
+    ],
+    featuresAr: [
+      "تصميم شعار",
+      "تصميم بطاقة عمل",
+      "تصميم استيكر",
+      "قالب منشور سوشيال ميديا",
+      "قالب ستوري",
+      "3 هايلايتس",
+    ],
+  },
+];
+
+// ─── Web & App Services ──────────────────────────────────────────
+const webUiServices = [
+  { nameEn: "Landing Page (UI/UX)", nameAr: "لاندينج بيج (UI/UX)", price: "$120" },
+  { nameEn: "Company Website UI/UX (4–6 Pages)", nameAr: "موقع شركة UI/UX (4–6 صفحات)", price: "$400" },
+  { nameEn: "E-commerce UI/UX", nameAr: "متجر إلكتروني UI/UX", price: "$700" },
+  { nameEn: "Mobile App UI/UX", nameAr: "تطبيق جوال UI/UX", price: "$600" },
+];
+
+const webDevServices = [
+  { nameEn: "Portfolio Website", nameAr: "موقع بورتفوليو", price: "$550" },
+  { nameEn: "Company Website", nameAr: "موقع شركة", price: "$950" },
+  { nameEn: "E-commerce Website (Starting from)", nameAr: "متجر إلكتروني (يبدأ من)", price: "$2,000" },
+  { nameEn: "Dashboard / Admin Panel (Starting from)", nameAr: "لوحة تحكم (يبدأ من)", price: "$1,200" },
+];
+
+// ─── Services Gallery ─────────────────────────────────────────────
+const servicesGallery = [
+  { src: "/images/services/service1.jpg", titleEn: "Brand Identity", titleAr: "هوية بصرية", descEn: "Professional logo and complete visual identity.", descAr: "شعار احترافي وهوية بصرية متكاملة." },
+  { src: "/images/services/service2.jpg", titleEn: "Social Media Design", titleAr: "تصميم سوشيال ميديا", descEn: "Creative posts and advertising campaigns.", descAr: "منشورات إبداعية وحملات إعلانية." },
+  { src: "/images/services/service3.jpg", titleEn: "Print Design", titleAr: "تصميم طباعة", descEn: "Brochures, business cards and marketing materials.", descAr: "بروشورات، بطاقات عمل ومواد تسويقية." },
+  { src: "/images/services/service4.jpg", titleEn: "UI/UX Design", titleAr: "تصميم واجهات", descEn: "Modern website and mobile app interfaces.", descAr: "واجهات مواقع وتطبيقات عصرية." },
+];
+
 export default function PricingContent() {
   const { language } = useLanguage();
 
@@ -238,6 +357,219 @@ export default function PricingContent() {
               {language === "ar" ? "تواصل معي" : "Contact Me"}
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ─── SERVICES & PRICING (NEW) ───────────────────────────── */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-transparent to-transparent" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="uppercase tracking-[6px] text-purple-400 font-semibold">
+              {language === "ar" ? "الخدمات والأسعار" : "Services & Pricing"}
+            </p>
+            <h2 className="text-4xl md:text-6xl font-black mt-4">
+              {language === "ar" ? "كل ما تحتاجه" : "Everything You"}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                {" "}{language === "ar" ? "لمشروعك" : "Need"}
+              </span>
+            </h2>
+            <p className="mt-6 text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
+              {language === "ar"
+                ? "أصمم واجهات وتجارب استخدام احترافية باستخدام Figma، وأطوّر مواقع ويب حديثة بأحدث التقنيات مثل Next.js وReact مع التركيز على الأداء، سرعة التحميل، وتجربة المستخدم."
+                : "I design professional UI/UX interfaces using Figma, and develop modern websites with cutting-edge technologies like Next.js and React, focusing on performance, speed, and user experience."}
+            </p>
+          </motion.div>
+
+          {/* ── Individual Services ── */}
+          <div className="mb-20">
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold mb-2"
+            >
+              {language === "ar" ? "Offers and services" : "Offers and services"}
+            </motion.h3>
+            <p className="text-slate-400 mb-8">
+              {language === "ar" ? "نعمل على تنفيذ تصاميم أخرى حسب الطلب." : "We work on implementing other designs upon request."}
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {individualServices.map((service, index) => (
+                <motion.div
+                  key={service.nameEn}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.04 }}
+                  viewport={{ once: true }}
+                  className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex items-center justify-between hover:border-purple-500 transition group"
+                >
+                  <span className="text-white text-sm font-medium">
+                    {language === "ar" ? service.nameAr : service.nameEn}
+                  </span>
+                  <span className="text-purple-400 font-bold text-lg">{service.price}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Design Packages ── */}
+          <div className="mb-20">
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold mb-10 text-center"
+            >
+              {language === "ar" ? "الباقات الاحترافية" : "Professional Packages"}
+            </motion.h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {designPackages.map((pkg, index) => (
+                <motion.div
+                  key={pkg.nameEn}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.15 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-b from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-3xl p-8 transition duration-300 hover:-translate-y-3 shadow-xl shadow-purple-500/10"
+                >
+                  <h4 className="text-2xl font-bold">{language === "ar" ? pkg.nameAr : pkg.nameEn}</h4>
+                  <div className="mt-4">
+                    <span className="text-5xl font-black">{pkg.price}</span>
+                  </div>
+                  <p className="text-slate-400 mt-4 text-sm">
+                    {language === "ar" ? pkg.descriptionAr : pkg.descriptionEn}
+                  </p>
+                  <ul className="mt-8 space-y-3">
+                    {(language === "ar" ? pkg.featuresAr : pkg.featuresEn).map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm">
+                        <Check className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="block text-center mt-8 py-4 rounded-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition"
+                  >
+                    {language === "ar" ? "اطلب الآن" : "Order Now"}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Web & App Services ── */}
+          <div className="mb-20">
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold mb-10 text-center"
+            >
+              {language === "ar" ? "تصميم وبرمجة المواقع والتطبيقات" : "Web & App Design & Development"}
+            </motion.h3>
+
+            {/* UI/UX Design */}
+            <div className="mb-8">
+              <h4 className="text-xl font-semibold text-purple-400 mb-4 flex items-center gap-2">
+                🎨 {language === "ar" ? "تصميم واجهات (Figma)" : "UI/UX Design (Figma)"}
+              </h4>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {webUiServices.map((service, index) => (
+                  <motion.div
+                    key={service.nameEn}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                    className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col hover:border-purple-500 transition"
+                  >
+                    <span className="text-white font-medium text-sm mb-2">
+                      {language === "ar" ? service.nameAr : service.nameEn}
+                    </span>
+                    <span className="text-purple-400 font-bold text-xl">{service.price}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Development */}
+            <div>
+              <h4 className="text-xl font-semibold text-pink-400 mb-4 flex items-center gap-2">
+                💻 {language === "ar" ? "التصميم + البرمجة" : "Design + Development"}
+              </h4>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {webDevServices.map((service, index) => (
+                  <motion.div
+                    key={service.nameEn}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                    className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col hover:border-pink-500 transition"
+                  >
+                    <span className="text-white font-medium text-sm mb-2">
+                      {language === "ar" ? service.nameAr : service.nameEn}
+                    </span>
+                    <span className="text-pink-400 font-bold text-xl">{service.price}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Services Gallery ── */}
+          <div>
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold mb-10 text-center"
+            >
+              {language === "ar" ? "معرض الخدمات" : "Services Gallery"}
+            </motion.h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {servicesGallery.map((item, index) => (
+                <motion.div
+                  key={item.titleEn}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.12 }}
+                  viewport={{ once: true }}
+                  className="group rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-purple-500 duration-300 hover:-translate-y-2"
+                >
+                  <div className="relative h-64 overflow-hidden bg-slate-800 flex items-center justify-center">
+                    <div className="text-slate-600 text-sm">
+                      {item.src}
+                    </div>
+                    {/* When images are uploaded, they will appear here */}
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-white">
+                      {language === "ar" ? item.titleAr : item.titleEn}
+                    </h4>
+                    <p className="text-slate-400 mt-2 text-sm leading-relaxed">
+                      {language === "ar" ? item.descAr : item.descEn}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <p className="text-center text-slate-500 text-sm mt-6">
+              {language === "ar"
+                ? "ضع صورك في المجلد public/images/services/ بأسماء service1.jpg, service2.jpg, service3.jpg, service4.jpg"
+                : "Place your images in public/images/services/ named service1.jpg, service2.jpg, service3.jpg, service4.jpg"}
+            </p>
+          </div>
+
         </div>
       </section>
     </main>
