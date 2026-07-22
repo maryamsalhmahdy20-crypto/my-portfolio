@@ -206,14 +206,6 @@ const webDevServices = [
   { nameEn: "Dashboard / Admin Panel (Starting from)", nameAr: "لوحة تحكم (يبدأ من)", price: "$1,200" },
 ];
 
-// ─── Services Gallery ─────────────────────────────────────────────
-const servicesGallery = [
-  { src: "/images/services/service1.jpg" },
-  { src: "/images/services/service2.jpg" },
-  { src: "/images/services/service3.jpg" },
-  { src: "/images/services/service4.jpg" },
-];
-
 // ─── Web Design Gallery ───────────────────────────────────────────
 const webImages = [
   "/images/portfolio/web.jpg",
@@ -402,7 +394,7 @@ export default function PricingContent() {
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-bold mb-2"
             >
-              {language === "ar" ? "Offers and services" : "Offers and services"}
+              {language === "ar" ? "العروض والخدمات" : "Offers and services"}
             </motion.h3>
             <p className="text-slate-400 mb-8">
               {language === "ar" ? "نعمل على تنفيذ تصاميم أخرى حسب الطلب." : "We work on implementing other designs upon request."}
@@ -532,48 +524,21 @@ export default function PricingContent() {
             </div>
           </div>
 
-          {/* ── Services Gallery ── */}
-          <div className="mb-20">
-            <motion.h3
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-bold mb-10 text-center"
-            >
-              {language === "ar" ? "معرض الخدمات" : "Services Gallery"}
-            </motion.h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {servicesGallery.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.12 }}
-                  viewport={{ once: true }}
-                  className="relative h-72 rounded-3xl overflow-hidden group"
-                >
-                  <Image
-                    src={item.src}
-                    alt=""
-                    fill
-                    className="object-cover group-hover:scale-105 duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
           {/* ── Web Design Gallery ── */}
           <div>
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-bold mb-10 text-center"
+              className="text-2xl md:text-3xl font-bold mb-4 text-center"
             >
-              Web Design
+              {language === "ar" ? "تصميم مواقع الويب" : "Web Design"}
             </motion.h3>
+            <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">
+              {language === "ar"
+                ? "تم تصميم موقع لمنصة توظيف احترافية تحاكي كل معايير تجربة المستخدم UI/UX"
+                : "A professional job platform website designed with full UI/UX standards"}
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               {webImages.map((src, index) => (
                 <motion.div
