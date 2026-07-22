@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, Camera, Code2 } from "lucide-react";
+import { Mail, MapPin, Phone, Globe, Camera, Code2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const socialLinks = [
   {
@@ -25,6 +26,8 @@ const socialLinks = [
 ];
 
 export default function ContactContent() {
+  const { language } = useLanguage();
+
   return (
     <main className="min-h-screen bg-slate-950 text-white pt-32">
       {/* Header */}
@@ -33,126 +36,128 @@ export default function ContactContent() {
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <p className="uppercase tracking-[6px] text-blue-400 font-semibold">Get In Touch</p>
+          <p className="uppercase tracking-[6px] text-blue-400 font-semibold">
+            {language === "ar" ? "تواصل معي" : "Get In Touch"}
+          </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mt-4 tracking-tight">
-            Let&apos;s Work
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"> Together</span>
+            {language === "ar" ? "لنعمل" : "Let&apos;s Work"}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              {" "}{language === "ar" ? "معاً" : "Together"}
+            </span>
           </h1>
           <p className="mt-4 text-slate-400 text-lg max-w-2xl mx-auto">
-            Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s create something amazing.
+            {language === "ar"
+              ? "لدي مشروع في بالك؟ يسعدني سماع أفكارك. تواصل معي وأخبرني عن مشروعك."
+              : "Have a project in mind? I'd love to hear about it. Let's create something amazing together."}
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Info Section */}
       <section className="py-12 pb-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Email Card */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
               viewport={{ once: true }}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition duration-300 hover:-translate-y-2"
             >
-              <h2 className="text-3xl font-bold mb-8">Send a Message</h2>
-
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full p-4 rounded-xl bg-slate-900 border border-slate-800 focus:border-blue-500 outline-none transition text-white"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full p-4 rounded-xl bg-slate-900 border border-slate-800 focus:border-blue-500 outline-none transition text-white"
-                  />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full p-4 rounded-xl bg-slate-900 border border-slate-800 focus:border-blue-500 outline-none transition text-white"
-                />
-                <textarea
-                  placeholder="Tell me about your project..."
-                  rows={6}
-                  className="w-full p-4 rounded-xl bg-slate-900 border border-slate-800 focus:border-blue-500 outline-none transition text-white resize-none"
-                />
-                <button
-                  type="submit"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    alert("Thank you! This is a demo form. Please email me directly at maryam@example.com");
-                  }}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition font-bold text-lg"
-                >
-                  Send Message
-                </button>
-              </form>
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
+                <Mail className="w-7 h-7 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">
+                {language === "ar" ? "البريد الإلكتروني" : "Email"}
+              </h3>
+              <a
+                href="mailto:designermaream@gmail.com"
+                className="text-slate-400 hover:text-blue-400 transition break-all"
+              >
+                designermaream@gmail.com
+              </a>
             </motion.div>
 
-            {/* Contact Info */}
+            {/* Phone Card */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition duration-300 hover:-translate-y-2"
             >
-              <h2 className="text-3xl font-bold mb-8">Contact Info</h2>
-
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Email</h3>
-                    <p className="text-slate-400 mt-1">maryam@example.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Location</h3>
-                    <p className="text-slate-400 mt-1">Basrah, Iraq</p>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-slate-800">
-                  <h3 className="text-lg font-semibold mb-6">Follow Me</h3>
-                  <div className="flex gap-4">
-                    {socialLinks.map((social) => {
-                      const Icon = social.icon;
-                      return (
-                        <a
-                          key={social.name}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center transition duration-300 hover:border-blue-500 ${social.color}`}
-                        >
-                          <Icon className="w-6 h-6" />
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="pt-6">
-                  <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-6">
-                    <p className="text-slate-300 leading-relaxed">
-                      I typically respond within 24 hours. Let&apos;s discuss how I can help bring your vision to life!
-                    </p>
-                  </div>
-                </div>
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
+                <Phone className="w-7 h-7 text-blue-400" />
               </div>
+              <h3 className="text-xl font-bold mb-2">
+                {language === "ar" ? "رقم الهاتف" : "Phone"}
+              </h3>
+              <a
+                href="tel:+96477042185816"
+                className="text-slate-400 hover:text-blue-400 transition"
+                dir="ltr"
+              >
+                +964 0774 218 5816
+              </a>
+              <p className="text-slate-500 text-sm mt-1">
+                {language === "ar" ? "العراق - البصرة" : "Basrah, Iraq"}
+              </p>
+            </motion.div>
+
+            {/* Location Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition duration-300 hover:-translate-y-2"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
+                <MapPin className="w-7 h-7 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">
+                {language === "ar" ? "الموقع" : "Location"}
+              </h3>
+              <p className="text-slate-400">
+                {language === "ar" ? "البصرة، العراق" : "Basrah, Iraq"}
+              </p>
             </motion.div>
           </div>
+
+          {/* Social Media & Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="mt-16 bg-gradient-to-r from-slate-900 to-slate-800/50 border border-slate-800 rounded-3xl p-10 text-center"
+          >
+            <h3 className="text-2xl font-bold mb-4">
+              {language === "ar" ? "تابعني على" : "Follow Me On"}
+            </h3>
+            <div className="flex justify-center gap-4 mt-6">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center transition duration-300 hover:border-blue-500 ${social.color}`}
+                  >
+                    <Icon className="w-6 h-6" />
+                  </a>
+                );
+              })}
+            </div>
+            <p className="text-slate-400 mt-8 leading-relaxed max-w-xl mx-auto">
+              {language === "ar"
+                ? "يمكنك التواصل معي عبر البريد الإلكتروني أو الهاتف. سأرد عليك في أقرب وقت ممكن."
+                : "You can reach me via email or phone. I'll get back to you as soon as possible."}
+            </p>
+          </motion.div>
         </div>
       </section>
     </main>

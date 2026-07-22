@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
+  const { language } = useLanguage();
+
   return (
     <section className="bg-[#0F172A] text-white py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -15,18 +18,17 @@ export default function About() {
         >
 
           <p className="uppercase tracking-[6px] text-blue-400 font-semibold">
-            About Me
+            {language === "ar" ? "عني" : "About Me"}
           </p>
 
           <h2 className="text-5xl font-black mt-5">
-            Creative Graphic Designer
+            {language === "ar" ? "مصممة جرافيك مبدعة" : "Creative Graphic Designer"}
           </h2>
 
           <p className="mt-8 text-slate-400 leading-9 max-w-3xl text-lg">
-            I specialize in creating visual identities, logo systems,
-            social media campaigns, brochures, flyers, business cards,
-            packaging and professional marketing materials that help
-            businesses present a strong and memorable brand.
+            {language === "ar"
+              ? "أتخصص في إنشاء هويات بصرية، أنظمة شعارات، حملات سوشيال ميديا، بروشورات، فلايرز، بطاقات عمل، تغليف ومواد تسويقية احترافية تساعد الشركات على تقديم علامة تجارية قوية لا تنسى."
+              : "I specialize in creating visual identities, logo systems, social media campaigns, brochures, flyers, business cards, packaging and professional marketing materials that help businesses present a strong and memorable brand."}
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-16">
@@ -37,7 +39,7 @@ export default function About() {
               </h3>
 
               <p className="mt-3 text-slate-400">
-                Years Learning Design
+                {language === "ar" ? "سنوات تعلم التصميم" : "Years Learning Design"}
               </p>
             </div>
 
@@ -47,7 +49,7 @@ export default function About() {
               </h3>
 
               <p className="mt-3 text-slate-400">
-                Design Concepts
+                {language === "ar" ? "مفهوم تصميم" : "Design Concepts"}
               </p>
             </div>
 
@@ -57,7 +59,7 @@ export default function About() {
               </h3>
 
               <p className="mt-3 text-slate-400">
-                Responsive Design
+                {language === "ar" ? "تصميم متجاوب" : "Responsive Design"}
               </p>
             </div>
 

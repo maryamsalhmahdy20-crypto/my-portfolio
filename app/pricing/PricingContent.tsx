@@ -3,26 +3,38 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 const plans = [
   {
-    name: "Starter",
+    nameEn: "Starter",
+    nameAr: "المبتدئ",
     price: "$150",
-    description: "Perfect for small businesses or personal brands getting started.",
-    features: [
+    descriptionEn: "Perfect for small businesses or personal brands getting started.",
+    descriptionAr: "مثالي للشركات الصغيرة أو العلامات التجارية الشخصية الجديدة.",
+    featuresEn: [
       "Logo Design (2 concepts)",
       "Business Card Design",
       "Social Media Profile Kit",
       "1 Revision Round",
       "Source Files (PNG, JPG)",
     ],
+    featuresAr: [
+      "تصميم شعار (مفهومين)",
+      "تصميم بطاقة عمل",
+      "طقم حسابات سوشيال ميديا",
+      "جولة مراجعة واحدة",
+      "ملفات المصدر (PNG, JPG)",
+    ],
     highlighted: false,
   },
   {
-    name: "Professional",
+    nameEn: "Professional",
+    nameAr: "الاحترافي",
     price: "$350",
-    description: "Ideal for businesses needing a complete brand presence.",
-    features: [
+    descriptionEn: "Ideal for businesses needing a complete brand presence.",
+    descriptionAr: "مثالي للشركات التي تحتاج حضور علامة تجارية كامل.",
+    featuresEn: [
       "Logo Design (4 concepts)",
       "Brand Color Palette",
       "Typography Selection",
@@ -31,13 +43,24 @@ const plans = [
       "2 Revision Rounds",
       "Source Files (AI, PNG, PDF)",
     ],
+    featuresAr: [
+      "تصميم شعار (4 مفاهيم)",
+      "لوحة ألوان العلامة التجارية",
+      "اختيار الخطوط",
+      "بطاقة عمل وقرطاسية",
+      "طقم سوشيال ميديا (5 منشورات)",
+      "جولتان مراجعة",
+      "ملفات المصدر (AI, PNG, PDF)",
+    ],
     highlighted: true,
   },
   {
-    name: "Enterprise",
+    nameEn: "Enterprise",
+    nameAr: "المؤسسات",
     price: "$700",
-    description: "Comprehensive branding package for established businesses.",
-    features: [
+    descriptionEn: "Comprehensive branding package for established businesses.",
+    descriptionAr: "باقة هوية بصرية شاملة للشركات القائمة.",
+    featuresEn: [
       "Complete Brand Identity",
       "Logo Design (6 concepts)",
       "Full Color Palette & Typography",
@@ -48,19 +71,32 @@ const plans = [
       "3 Revision Rounds",
       "Source Files (All formats)",
     ],
+    featuresAr: [
+      "هوية بصرية كاملة",
+      "تصميم شعار (6 مفاهيم)",
+      "لوحة ألوان وخطوط كاملة",
+      "دليل العلامة التجارية",
+      "طقم القرطاسية المكتبية",
+      "طقم سوشيال ميديا (10 منشورات)",
+      "تصميم تغليف",
+      "3 جولات مراجعة",
+      "ملفات المصدر (جميع الصيغ)",
+    ],
     highlighted: false,
   },
 ];
 
 const addons = [
-  { name: "Additional Logo Concept", price: "$50" },
-  { name: "Social Media Post (per post)", price: "$25" },
-  { name: "Flyer/Brochure Design", price: "$80" },
-  { name: "Packaging Design", price: "$150" },
-  { name: "Website UI Design (per page)", price: "$100" },
+  { nameEn: "Additional Logo Concept", nameAr: "مفهوم شعار إضافي", price: "$50" },
+  { nameEn: "Social Media Post (per post)", nameAr: "منشور سوشيال ميديا (للإنشاد)", price: "$25" },
+  { nameEn: "Flyer/Brochure Design", nameAr: "تصميم فلاير/بروشور", price: "$80" },
+  { nameEn: "Packaging Design", nameAr: "تصميم تغليف", price: "$150" },
+  { nameEn: "Website UI Design (per page)", nameAr: "تصميم واجهة موقع (للصفحة)", price: "$100" },
 ];
 
 export default function PricingContent() {
+  const { language } = useLanguage();
+
   return (
     <main className="min-h-screen bg-slate-950 text-white pt-32">
       {/* Header */}
@@ -69,13 +105,19 @@ export default function PricingContent() {
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <p className="uppercase tracking-[6px] text-blue-400 font-semibold">Pricing</p>
+          <p className="uppercase tracking-[6px] text-blue-400 font-semibold">
+            {language === "ar" ? "الأسعار" : "Pricing"}
+          </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mt-4 tracking-tight">
-            Design
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"> Packages</span>
+            {language === "ar" ? "باقات" : "Design"}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              {" "}{language === "ar" ? "التصميم" : "Packages"}
+            </span>
           </h1>
           <p className="mt-4 text-slate-400 text-lg max-w-2xl mx-auto">
-            Choose the package that fits your needs. Custom quotes available for larger projects.
+            {language === "ar"
+              ? "اختر الباقة التي تناسب احتياجاتك. عروض أسعار مخصصة للمشاريع الأكبر."
+              : "Choose the package that fits your needs. Custom quotes available for larger projects."}
           </p>
         </div>
       </section>
@@ -86,7 +128,7 @@ export default function PricingContent() {
           <div className="grid md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <motion.div
-                key={plan.name}
+                key={plan.nameEn}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15 }}
@@ -99,20 +141,24 @@ export default function PricingContent() {
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-1.5 rounded-full text-sm font-semibold">
-                    Most Popular
+                    {language === "ar" ? "الأكثر طلباً" : "Most Popular"}
                   </div>
                 )}
 
                 <div className="mt-2">
-                  <h3 className="text-2xl font-bold">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold">
+                    {language === "ar" ? plan.nameAr : plan.nameEn}
+                  </h3>
                   <div className="mt-4">
                     <span className="text-5xl font-black">{plan.price}</span>
                   </div>
-                  <p className="text-slate-400 mt-4">{plan.description}</p>
+                  <p className="text-slate-400 mt-4">
+                    {language === "ar" ? plan.descriptionAr : plan.descriptionEn}
+                  </p>
                 </div>
 
                 <ul className="mt-8 space-y-4">
-                  {plan.features.map((feature) => (
+                  {(language === "ar" ? plan.featuresAr : plan.featuresEn).map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
                       <span className="text-slate-300">{feature}</span>
@@ -128,7 +174,7 @@ export default function PricingContent() {
                       : "bg-slate-800 hover:bg-slate-700 border border-slate-700"
                   }`}
                 >
-                  Get Started
+                  {language === "ar" ? "ابدأ الآن" : "Get Started"}
                 </Link>
               </motion.div>
             ))}
@@ -145,21 +191,27 @@ export default function PricingContent() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-black">Add-On Services</h2>
-            <p className="text-slate-400 mt-4">Enhance your package with additional services.</p>
+            <h2 className="text-3xl md:text-4xl font-black">
+              {language === "ar" ? "خدمات إضافية" : "Add-On Services"}
+            </h2>
+            <p className="text-slate-400 mt-4">
+              {language === "ar" ? "عزز باقتك بخدمات إضافية." : "Enhance your package with additional services."}
+            </p>
           </motion.div>
 
           <div className="space-y-4">
             {addons.map((addon, index) => (
               <motion.div
-                key={addon.name}
+                key={addon.nameEn}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="flex items-center justify-between bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500 transition"
               >
-                <span className="text-white font-medium">{addon.name}</span>
+                <span className="text-white font-medium">
+                  {language === "ar" ? addon.nameAr : addon.nameEn}
+                </span>
                 <span className="text-blue-400 font-bold text-lg">{addon.price}</span>
               </motion.div>
             ))}
@@ -171,15 +223,19 @@ export default function PricingContent() {
             viewport={{ once: true }}
             className="mt-12 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-3xl p-8 text-center"
           >
-            <h3 className="text-2xl font-bold">Need a Custom Quote?</h3>
+            <h3 className="text-2xl font-bold">
+              {language === "ar" ? "هل تحتاج عرض سعر مخصص؟" : "Need a Custom Quote?"}
+            </h3>
             <p className="text-slate-400 mt-4 max-w-xl mx-auto">
-              Every project is unique. Contact me for a personalized quote tailored to your specific requirements.
+              {language === "ar"
+                ? "كل مشروع فريد. تواصل معي للحصول على عرض سعر مخصص يناسب متطلباتك."
+                : "Every project is unique. Contact me for a personalized quote tailored to your specific requirements."}
             </p>
             <Link
               href="/contact"
               className="inline-block mt-6 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-bold transition"
             >
-              Contact Me
+              {language === "ar" ? "تواصل معي" : "Contact Me"}
             </Link>
           </motion.div>
         </div>

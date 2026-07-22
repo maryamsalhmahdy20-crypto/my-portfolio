@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { language } = useLanguage();
+
   return (
     <section className="relative overflow-hidden bg-[#0B1120] text-white">
 
@@ -24,24 +27,23 @@ export default function Hero() {
           >
 
             <p className="uppercase tracking-[5px] text-blue-400 font-semibold">
-              Graphic Designer
+              {language === "ar" ? "مصممة جرافيك" : "Graphic Designer"}
             </p>
 
             <h1 className="text-5xl lg:text-7xl font-black mt-6 leading-tight">
-              Maryam
+              {language === "ar" ? "مصممة" : "Designer"}
               <br />
-              Saleh
+              Maryam
             </h1>
 
             <h2 className="mt-6 text-2xl text-slate-300">
-              Brand Identity & Print Designer
+              {language === "ar" ? "هوية بصرية وتصميم طباعة" : "Brand Identity & Print Designer"}
             </h2>
 
             <p className="mt-8 text-slate-400 leading-8 max-w-xl">
-              I create professional branding,
-              logos, social media campaigns,
-              brochures, packaging and modern
-              visual identities for businesses.
+              {language === "ar"
+                ? "أبتكر هويات بصرية احترافية، شعارات، حملات سوشيال ميديا، بروشورات، تغليف وهويات بصرية حديثة للشركات."
+                : "I create professional branding, logos, social media campaigns, brochures, packaging and modern visual identities for businesses."}
             </p>
 
             <div className="flex flex-wrap gap-4 mt-10">
@@ -50,14 +52,14 @@ export default function Hero() {
                 href="/portfolio"
                 className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 transition"
               >
-                View Portfolio
+                {language === "ar" ? "شاهد أعمالي" : "View Portfolio"}
               </Link>
 
               <Link
                 href="/pricing"
                 className="px-8 py-4 rounded-xl border border-blue-500 hover:bg-blue-600 transition"
               >
-                Pricing
+                {language === "ar" ? "الأسعار" : "Pricing"}
               </Link>
 
             </div>
@@ -75,7 +77,7 @@ export default function Hero() {
 
             <Image
               src="/images/portfolio/profile.jpg"
-              alt="Maryam"
+              alt="Designer Maryam"
               width={430}
               height={530}
               priority

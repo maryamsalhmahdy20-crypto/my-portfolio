@@ -1,6 +1,11 @@
+"use client";
+
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function PortfolioPage() {
+  const { language } = useLanguage();
+
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       {/* Header */}
@@ -10,14 +15,15 @@ export default function PortfolioPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight">
-            My
+            {language === "ar" ? "أعمالي" : "My"}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              {" "}
-              Portfolio
+              {" "}{language === "ar" ? "المميزة" : "Portfolio"}
             </span>
           </h1>
           <p className="mt-4 text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Explore my latest projects in branding, social media, and print design.
+            {language === "ar"
+              ? "استعرض أحدث مشاريعي في الهوية البصرية، السوشيال ميديا، وتصميم الطباعة."
+              : "Explore my latest projects in branding, social media, and print design."}
           </p>
         </div>
       </section>
