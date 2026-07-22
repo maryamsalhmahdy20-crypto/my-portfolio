@@ -18,13 +18,14 @@ export default function Testimonials() {
   const [comment, setComment] = useState("");
 
   async function loadComments() {
-    if (!supabase) return;
-    
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("comments")
       .select("*")
       .eq("approved", true)
       .order("created_at", { ascending: false });
+
+    console.log("LOAD DATA:", data);
+    console.log("LOAD ERROR:", error);
 
     if (data) setComments(data);
   }
@@ -39,27 +40,27 @@ export default function Testimonials() {
       return;
     }
 
-    if (!supabase) {
-      alert("Database connection not available");
-      return;
-    }
+    const { data, error } = await supabase
+      .from("comments")
+      .insert([
+        {
+          name,
+          email,
+          comment,
+          approved: false,
+        },
+      ])
+      .select();
 
-    const { error } = await supabase.from("comments").insert([
-      {
-        name,
-        email,
-        comment,
-        approved: false,
-      },
-    ]);
+    console.log("INSERT DATA:", data);
+    console.log("INSERT ERROR:", error);
 
     if (error) {
-      console.log(error);
-      alert("Error");
+      alert(error.message);
       return;
     }
 
-    alert("Comment sent successfully. It will appear after approval.");
+    alert("Comment sent.");
 
     setName("");
     setEmail("");
@@ -79,21 +80,21 @@ export default function Testimonials() {
           className="w-full mb-5 p-4 rounded bg-[#232c41] text-white"
           placeholder="Your Name"
           value={name}
-          onChange={(e)=>setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
 
         <input
           className="w-full mb-5 p-4 rounded bg-[#232c41] text-white"
           placeholder="Email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <textarea
           className="w-full mb-5 p-4 rounded bg-[#232c41] text-white h-40"
           placeholder="Write your opinion..."
           value={comment}
-          onChange={(e)=>setComment(e.target.value)}
+          onChange={(e) => setComment(e.target.value)}
         />
 
         <button
@@ -107,17 +108,16 @@ export default function Testimonials() {
 
       <div className="space-y-6">
 
-        {comments.map((item)=>(
+        {comments.map((item) => (
           <div
             key={item.id}
             className="bg-[#161d2f] rounded-xl p-6"
           >
-
             <h3 className="text-xl font-bold text-white">
               {item.name}
             </h3>
 
-            <p className="text-blue-400 mb-3">
+            <p className="text-blue-400 mb-2">
               {item.email}
             </p>
 

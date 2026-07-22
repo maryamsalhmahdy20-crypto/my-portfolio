@@ -22,7 +22,7 @@ description:"Creative Instagram and Facebook campaigns.",
 images:[
 "/images/portfolio/social.jpg",
 "/images/portfolio/social2.jpg",
-"/images/portfolio/social3.jpg",
+"/images/portfolio/social3.png",
 ],
 },
 

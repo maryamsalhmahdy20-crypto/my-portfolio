@@ -9,7 +9,7 @@ const projects = [
     title: "Brand Identity",
     description: "Professional logos and complete visual identity.",
     image: "/images/portfolio/branding.jpg",
-    link: "/portfolio/branding",
+    link: "/portfolio/brand-identity",
   },
   {
     title: "Social Media",
@@ -21,7 +21,7 @@ const projects = [
     title: "Print Design",
     description: "Brochures, flyers, business cards and packaging.",
     image: "/images/portfolio/print.jpg",
-    link: "/portfolio/printing",
+    link: "/portfolio/print-design",
   },
 ];
 
