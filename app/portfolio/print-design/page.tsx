@@ -42,6 +42,19 @@ export default function PrintDesignPage() {
       {/* Gallery Section */}
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              اخر احدث تصاميمي
+            </h2>
+            <p className="text-slate-400 mt-2">
+              بروشور لمدرسة فتحت حديثا بالبصرة
+            </p>
+            <div className="mt-2 border-t border-slate-800 w-16 mx-auto" />
+            <p className="text-slate-500 text-sm mt-2">
+              My Latest Design — Brochure for a newly opened school in Basra
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {project.images.map((image, index) => (
               <div

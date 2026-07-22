@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -207,10 +208,15 @@ const webDevServices = [
 
 // ─── Services Gallery ─────────────────────────────────────────────
 const servicesGallery = [
-  { src: "/images/services/service1.jpg", titleEn: "Brand Identity", titleAr: "هوية بصرية", descEn: "Professional logo and complete visual identity.", descAr: "شعار احترافي وهوية بصرية متكاملة." },
-  { src: "/images/services/service2.jpg", titleEn: "Social Media Design", titleAr: "تصميم سوشيال ميديا", descEn: "Creative posts and advertising campaigns.", descAr: "منشورات إبداعية وحملات إعلانية." },
-  { src: "/images/services/service3.jpg", titleEn: "Print Design", titleAr: "تصميم طباعة", descEn: "Brochures, business cards and marketing materials.", descAr: "بروشورات، بطاقات عمل ومواد تسويقية." },
-  { src: "/images/services/service4.jpg", titleEn: "UI/UX Design", titleAr: "تصميم واجهات", descEn: "Modern website and mobile app interfaces.", descAr: "واجهات مواقع وتطبيقات عصرية." },
+  { src: "/images/services/service1.jpg" },
+  { src: "/images/services/service2.jpg" },
+  { src: "/images/services/service3.jpg" },
+  { src: "/images/services/service4.jpg" },
+];
+
+// ─── Web Design Gallery ───────────────────────────────────────────
+const webImages = [
+  "/images/portfolio/web.jpg",
 ];
 
 export default function PricingContent() {
@@ -527,7 +533,7 @@ export default function PricingContent() {
           </div>
 
           {/* ── Services Gallery ── */}
-          <div>
+          <div className="mb-20">
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -539,35 +545,55 @@ export default function PricingContent() {
             <div className="grid md:grid-cols-2 gap-8">
               {servicesGallery.map((item, index) => (
                 <motion.div
-                  key={item.titleEn}
+                  key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.12 }}
                   viewport={{ once: true }}
-                  className="group rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-purple-500 duration-300 hover:-translate-y-2"
+                  className="relative h-72 rounded-3xl overflow-hidden group"
                 >
-                  <div className="relative h-64 overflow-hidden bg-slate-800 flex items-center justify-center">
-                    <div className="text-slate-600 text-sm">
-                      {item.src}
-                    </div>
-                    {/* When images are uploaded, they will appear here */}
-                  </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold text-white">
-                      {language === "ar" ? item.titleAr : item.titleEn}
-                    </h4>
-                    <p className="text-slate-400 mt-2 text-sm leading-relaxed">
-                      {language === "ar" ? item.descAr : item.descEn}
-                    </p>
-                  </div>
+                  <Image
+                    src={item.src}
+                    alt=""
+                    fill
+                    className="object-cover group-hover:scale-105 duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-slate-500 text-sm mt-6">
-              {language === "ar"
-                ? "ضع صورك في المجلد public/images/services/ بأسماء service1.jpg, service2.jpg, service3.jpg, service4.jpg"
-                : "Place your images in public/images/services/ named service1.jpg, service2.jpg, service3.jpg, service4.jpg"}
-            </p>
+          </div>
+
+          {/* ── Web Design Gallery ── */}
+          <div>
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold mb-10 text-center"
+            >
+              Web Design
+            </motion.h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {webImages.map((src, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.12 }}
+                  viewport={{ once: true }}
+                  className="relative h-72 rounded-3xl overflow-hidden group"
+                >
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    className="object-cover group-hover:scale-105 duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
 
         </div>

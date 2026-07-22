@@ -37,6 +37,16 @@ export default function BrandIdentityPage() {
       {/* Gallery Section */}
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              احب الاعمال لقلبي من الهويات البصرية
+            </h2>
+            <div className="mt-2 border-t border-slate-800 w-16 mx-auto" />
+            <p className="text-slate-500 text-sm mt-2">
+              My Favorite Brand Identity Works
+            </p>
+          </div>
           <BrandIdentityGallery />
         </div>
       </section>
