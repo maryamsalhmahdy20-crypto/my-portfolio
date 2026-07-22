@@ -40,23 +40,18 @@ export default function Testimonials() {
       return;
     }
 
-    const { data, error } = await supabase
-      .from("comments")
-      .insert([
-        {
-          name,
-          email,
-          comment,
-          approved: false,
-        },
-      ])
-      .select();
+    const res = await fetch("/api/comments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, comment }),
+    });
 
-    console.log("INSERT DATA:", data);
-    console.log("INSERT ERROR:", error);
+    const result = await res.json();
 
-    if (error) {
-      alert(error.message);
+    console.log("INSERT RESULT:", result);
+
+    if (!res.ok) {
+      alert(result.error || "Failed to send comment");
       return;
     }
 
