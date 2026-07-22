@@ -6,21 +6,21 @@ import { X } from "lucide-react";
 
 const galleryItems = [
   {
-    src: "/images/portfolio/brand-identity/brand1.jpg",
+    src: "/images/portfolio/brand1.jpg",
     title: "Roliqo Fly Branding",
     description:
       "تحدي تصميم هوية بصرية لشركة سياحة وسفر في البصرة مع دمج عنصر النخلة كرمز للمدينة.",
     alt: "Roliqo Fly Branding - هوية بصرية لشركة سياحة وسفر",
   },
   {
-    src: "/images/portfolio/brand-identity/brand2.jpg",
+    src: "/images/portfolio/brand2.jpg",
     title: "College Identity Concept",
     description:
       "تحدي تصميم هوية بصرية لكلية علوم الحاسوب وتكنولوجيا المعلومات ضمن مشروع تخرج.",
     alt: "College Identity Concept - هوية بصرية لكلية علوم الحاسوب",
   },
   {
-    src: "/images/portfolio/brand-identity/brand3.jpg",
+    src: "/images/portfolio/brand3.jpg",
     title: "Cat Café Branding",
     description:
       "تحدي تصميم هوية بصرية لمقهى قطط بفكرة عصرية ومبتكرة.",
