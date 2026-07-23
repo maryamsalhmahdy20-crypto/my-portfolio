@@ -5,9 +5,9 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Social Media Campaign - Designer Maryam Portfolio",
+  title: "Social Media Campaign - Designer MAREAM Portfolio",
   description:
-    "Social Media Campaign designs by Designer Maryam - Instagram and Facebook creative campaigns.",
+    "Social Media Campaign designs by Designer MAREAM - Instagram and Facebook creative campaigns.",
 };
 
 export default function SocialMediaPage() {

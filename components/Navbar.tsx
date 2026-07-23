@@ -26,7 +26,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <div className="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-6 flex items-center justify-between">
         <Link href="/" className="text-lg sm:text-xl lg:text-3xl font-black tracking-tight">
-          {language === "ar" ? "مصممة مريم" : "Designer Maryam"}
+          {language === "ar" ? "مصممة مريم" : "Designer MAREAM"}
         </Link>
 
         <div className="flex items-center gap-4">

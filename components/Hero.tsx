@@ -33,7 +33,7 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black mt-4 lg:mt-6 leading-tight text-center lg:text-right">
               {language === "ar" ? "مصممة" : "Designer"}
               <br />
-              Maryam
+              MAREAM
             </h1>
 
             <h2 className="mt-4 lg:mt-6 text-xl sm:text-2xl text-slate-300 text-center lg:text-right">
@@ -80,7 +80,7 @@ export default function Hero() {
               <div className="absolute -inset-4 bg-blue-500/20 rounded-[45px] blur-2xl" />
               <Image
                 src="/images/portfolio/profile.jpg"
-                alt="Designer Maryam"
+                alt="Designer MAREAM"
                 width={430}
                 height={530}
                 priority

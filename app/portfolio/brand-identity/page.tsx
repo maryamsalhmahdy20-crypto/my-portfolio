@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BrandIdentityGallery from "@/components/portfolio/BrandIdentityGallery";
 
 export const metadata: Metadata = {
-  title: "Brand Identity - Designer Maryam Portfolio",
+  title: "Brand Identity - Designer MAREAM Portfolio",
   description:
-    "معرض تصاميم الهوية البصرية - Brand Identity Gallery by Designer Maryam",
+    "معرض تصاميم الهوية البصرية - Brand Identity Gallery by Designer MAREAM",
 };
 
 export default function BrandIdentityPage() {

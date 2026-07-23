@@ -5,9 +5,9 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Print Design - Designer Maryam Portfolio",
+  title: "Print Design - Designer MAREAM Portfolio",
   description:
-    "Print Design portfolio by Designer Maryam - Brochures, flyers, business cards and packaging.",
+    "Print Design portfolio by Designer MAREAM - Brochures, flyers, business cards and packaging.",
 };
 
 export default function PrintDesignPage() {

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Designer Maryam | Graphic Designer",
+  title: "Designer MAREAM | Graphic Designer",
   description: "Professional Graphic Designer specializing in Brand Identity, Social Media, Print Design, and Visual Identities.",
 };
 

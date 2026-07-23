@@ -41,7 +41,7 @@ export default function AboutContent() {
               <div className="relative">
                 <Image
                   src="/images/portfolio/profile.jpg"
-                  alt="Designer Maryam"
+                  alt="Designer MAREAM"
                   width={500}
                   height={600}
                   className="rounded-[35px] object-cover shadow-2xl border-4 border-blue-500/30"
@@ -65,7 +65,7 @@ export default function AboutContent() {
               <p className="mt-6 text-slate-400 leading-9 text-lg">
                 {language === "ar"
                   ? "أنا مصممة مريم، مصممة جرافيك شغوفة بقوة القصص البصرية. أتخصص في إنشاء الهويات البصرية، حملات السوشيال ميديا، مواد الطباعة، وأنظمة بصرية متكاملة تساعد الشركات على التميز."
-                  : "I'm Designer Maryam, a passionate graphic designer with a deep love for visual storytelling. I specialize in creating brand identities, social media campaigns, print materials, and complete visual systems that help businesses stand out."}
+                  : "I'm Designer MAREAM, a passionate graphic designer with a deep love for visual storytelling. I specialize in creating brand identities, social media campaigns, print materials, and complete visual systems that help businesses stand out."}
               </p>
               <p className="mt-6 text-slate-400 leading-9 text-lg">
                 {language === "ar"

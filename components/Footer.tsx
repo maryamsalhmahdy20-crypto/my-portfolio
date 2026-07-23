@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="py-12 text-center bg-slate-950 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6">
         <Link href="/" className="text-3xl font-black tracking-tight text-white">
-          {language === "ar" ? "مصممة مريم" : "Designer Maryam"}
+          {language === "ar" ? "مصممة مريم" : "Designer MAREAM"}
         </Link>
         <p className="mt-4 text-slate-400 max-w-md mx-auto">
           {language === "ar"
@@ -24,7 +24,7 @@ export default function Footer() {
           <Link href="/contact" className="hover:text-blue-400 transition">{language === "ar" ? "اتصل بي" : "Contact"}</Link>
         </div>
         <div className="mt-8 pt-8 border-t border-slate-800 text-slate-500 text-sm">
-          &copy; {new Date().getFullYear()} {language === "ar" ? "مصممة مريم. جميع الحقوق محفوظة." : "Designer Maryam. All rights reserved."}
+          &copy; {new Date().getFullYear()} {language === "ar" ? "مصممة مريم. جميع الحقوق محفوظة." : "Designer MAREAM. All rights reserved."}
         </div>
       </div>
     </footer>
