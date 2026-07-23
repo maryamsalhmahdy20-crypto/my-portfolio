@@ -31,30 +31,63 @@ export default function MusicPlayer() {
     };
   }, []);
 
-  // Attempt autoplay on first user interaction (click anywhere)
+  // Aggressive auto-play: use muted-then-unmute trick + multiple fallbacks
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleFirstInteraction = () => {
+    let retryCount = 0;
+    const maxRetries = 5;
+
+    const tryPlay = () => {
+      if (!audio) return;
       audio.play().then(() => {
         setIsPlaying(true);
-      }).catch(() => {});
+      }).catch(() => {
+        // Retry with exponential backoff
+        retryCount++;
+        if (retryCount < maxRetries) {
+          // Strategy 1: Retry after delay
+          setTimeout(tryPlay, 300 * retryCount);
+        }
+      });
     };
 
-    // Try autoplay immediately (might work on some browsers)
-    audio.play().then(() => {
-      setIsPlaying(true);
-    }).catch(() => {
-      // Browser blocked autoplay - wait for first click anywhere on page
-      document.addEventListener("click", handleFirstInteraction, { once: true });
-      document.addEventListener("touchstart", handleFirstInteraction, { once: true });
-    });
+    // Try muted autoplay trick (works in Chrome, Edge, Safari)
+    const tryMutedPlay = () => {
+      if (!audio) return;
+      audio.muted = true;
+      audio.play().then(() => {
+        // Unmute after a tiny delay - this bypasses autoplay policy
+        setTimeout(() => {
+          if (audio) {
+            audio.muted = false;
+            audio.volume = 0.3;
+            setIsPlaying(true);
+          }
+        }, 100);
+      }).catch(() => {
+        // Fallback: try regular play
+        audio.muted = false;
+        tryPlay();
+      });
+    };
+
+    // Execute autoplay strategies
+    tryMutedPlay();
+
+    // Also try on visibility change (tab becomes visible)
+    const handleVisibility = () => {
+      if (!document.hidden && audio && !audio.paused && !isPlaying) {
+        audio.play().then(() => setIsPlaying(true)).catch(() => {});
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
     return () => {
-      document.removeEventListener("click", handleFirstInteraction);
-      document.removeEventListener("touchstart", handleFirstInteraction);
+      document.removeEventListener("visibilitychange", handleVisibility);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const togglePlay = (e: React.MouseEvent) => {
