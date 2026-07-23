@@ -17,7 +17,7 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* النص */}
           <motion.div
@@ -26,38 +26,38 @@ export default function Hero() {
             transition={{ duration: .8 }}
           >
 
-            <p className="uppercase tracking-[5px] text-blue-400 font-semibold">
+            <p className="uppercase tracking-[5px] text-blue-400 font-semibold text-center lg:text-right">
               {language === "ar" ? "مصممة جرافيك" : "Graphic Designer"}
             </p>
 
-            <h1 className="text-5xl lg:text-7xl font-black mt-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black mt-4 lg:mt-6 leading-tight text-center lg:text-right">
               {language === "ar" ? "مصممة" : "Designer"}
               <br />
               Maryam
             </h1>
 
-            <h2 className="mt-6 text-2xl text-slate-300">
+            <h2 className="mt-4 lg:mt-6 text-xl sm:text-2xl text-slate-300 text-center lg:text-right">
               {language === "ar" ? "هوية بصرية وتصميم طباعة" : "Brand Identity & Print Designer"}
             </h2>
 
-            <p className="mt-8 text-slate-400 leading-8 max-w-xl">
+            <p className="mt-6 lg:mt-8 text-slate-400 leading-7 lg:leading-8 max-w-xl text-center lg:text-right mx-auto lg:mx-0">
               {language === "ar"
                 ? "أبتكر هويات بصرية احترافية، شعارات، حملات سوشيال ميديا، بروشورات، تغليف وهويات بصرية حديثة للشركات."
                 : "I create professional branding, logos, social media campaigns, brochures, packaging and modern visual identities for businesses."}
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="flex flex-wrap gap-4 mt-8 lg:mt-10 justify-center lg:justify-start">
 
               <Link
                 href="/portfolio"
-                className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 transition"
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-sm sm:text-base"
               >
                 {language === "ar" ? "شاهد أعمالي" : "View Portfolio"}
               </Link>
 
               <Link
                 href="/pricing"
-                className="px-8 py-4 rounded-xl border border-blue-500 hover:bg-blue-600 transition"
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-blue-500 hover:bg-blue-600 transition text-sm sm:text-base"
               >
                 {language === "ar" ? "الأسعار" : "Pricing"}
               </Link>
@@ -75,14 +75,18 @@ export default function Hero() {
             transition={{ duration: 1 }}
           >
 
-            <Image
-              src="/images/portfolio/profile.jpg"
-              alt="Designer Maryam"
-              width={430}
-              height={530}
-              priority
-              className="rounded-[35px] border-4 border-blue-500 shadow-2xl object-cover"
-            />
+            <div className="relative">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-4 bg-blue-500/20 rounded-[45px] blur-2xl" />
+              <Image
+                src="/images/portfolio/profile.jpg"
+                alt="Designer Maryam"
+                width={430}
+                height={530}
+                priority
+                className="relative w-[200px] sm:w-[260px] lg:w-[380px] xl:w-[430px] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] border-4 border-blue-500 shadow-2xl object-cover aspect-[4/5]"
+              />
+            </div>
 
           </motion.div>
 

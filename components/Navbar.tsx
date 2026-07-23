@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -44,6 +45,9 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
+
+          {/* Music Player */}
+          <MusicPlayer />
 
           {/* Language Switcher */}
           <button
